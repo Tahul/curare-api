@@ -138,6 +138,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests/Profile" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Profile" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/Auth" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
     </key>
@@ -165,10 +167,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="594" y="282" key="#Inspections" timestamp="1602001082120">
+    <state x="594" y="282" key="#Inspections" timestamp="1602165662123">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="594" y="282" key="#Inspections/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602001082120" />
+    <state x="594" y="282" key="#Inspections/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602165662123" />
     <state x="773" y="320" key="#com.intellij.ide.util.MemberChooser" timestamp="1602001057963">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -185,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1601994539518" />
-    <state x="651" y="334" width="599" height="490" key="find.popup" timestamp="1602002330078">
+    <state x="651" y="334" width="599" height="490" key="find.popup" timestamp="1602171946249">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="651" y="334" width="599" height="490" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602002330078" />
+    <state x="651" y="334" width="599" height="490" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602171946249" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601994504138">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -197,9 +199,9 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1601994522314" />
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1602079982267">
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1602172069698">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602079982267" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602172069698" />
   </component>
 </project>

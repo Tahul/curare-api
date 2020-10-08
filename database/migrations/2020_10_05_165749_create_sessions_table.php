@@ -15,10 +15,16 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
+
+            // Relations
             $table->foreignId('user_id')->nullable()->index();
+
+            // Attributes
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->text('payload');
+
+            // Timestamps
             $table->integer('last_activity')->index();
         });
     }
