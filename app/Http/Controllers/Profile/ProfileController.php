@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Lang;
 
 class ProfileController extends Controller
 {
+    // The avatars collection used for file storage
+    private string $AVATAR_COLLECTION_NAME = 'avatars';
+
     // Get the current user profile
     private function getCurrentUserProfile(Request $request): Profile
     {
@@ -22,16 +25,17 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $id
+     * @param Request $request
+     * @param int|null $id
      * @return JsonResponse
      */
-    public function show($id = null)
+    public function show(Request $request, $id = null)
     {
         try {
             $profile = null;
 
             if (is_null($id)) {
-                $profile = $this->getCurrentUserProfile();
+                $profile = $this->getCurrentUserProfile($request);
             } else {
                 $profile = Profile::where('user_id', $id)->firstOrFail();
             }
@@ -53,16 +57,20 @@ class ProfileController extends Controller
     public function update(ProfileUpdateRequest $request)
     {
         try {
-            $profile = $this->getCurrentUserProfile();
+            $profile = $this->getCurrentUserProfile($request);
 
-            $profileData = request(['first_name', 'last_name', 'description']);
+            $profileData = request(['first_name', 'last_name', 'description', 'url']);
 
             $profile->update($profileData);
 
-            return response()->json([
-                'message' => Lang::get('profile.updated'),
-                ...$profileData
-            ]);
+            return response()->json(
+                array_merge(
+                    [
+                        'message' => Lang::get('profile.updated'),
+                    ],
+                    $profileData
+                )
+            );
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get('profile.error')
@@ -78,11 +86,29 @@ class ProfileController extends Controller
      */
     public function updateAvatar(ProfileAvatarUpdateRequest $request)
     {
-        return response()->json([
-            'message' => 'Avatar updated!'
-        ]);
+        try {
+            $profile = $this->getCurrentUserProfile($request);
 
-        // TODO: Implement spatie/media-library avatar management
+            // Delete current avatar
+            if (!is_null($profile->getFirstMedia($this->AVATAR_COLLECTION_NAME))) {
+                $profile->getFirstMedia($this->AVATAR_COLLECTION_NAME)->delete();
+            }
+
+            $profile->addMedia($request->files->get('avatar'))->toMediaCollection($this->AVATAR_COLLECTION_NAME);
+
+            return response()->json(
+                array_merge(
+                    [
+                        'message' => Lang::get('profile.avatar.updated')
+                    ],
+                    $profile->refresh()->toArray()
+                )
+            );
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => Lang::get('profile.error')
+            ]);
+        }
     }
 
     /**
@@ -93,10 +119,26 @@ class ProfileController extends Controller
      */
     public function deleteAvatar(Request $request)
     {
-        return response()->json([
-            'message' => 'Avatar deleted!'
-        ]);
+        try {
+            $profile = $this->getCurrentUserProfile($request);
 
-        // TODO: Implement spatie/media-library avatar management
+            // Delete current avatar
+            if (!is_null($profile->getFirstMedia($this->AVATAR_COLLECTION_NAME))) {
+                $profile->getFirstMedia($this->AVATAR_COLLECTION_NAME)->delete();
+            }
+
+            return response()->json(
+                array_merge(
+                    [
+                        'message' => Lang::get('profile.avatar.removed')
+                    ],
+                    $profile->refresh()->toArray()
+                )
+            );
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => Lang::get('profile.error')
+            ]);
+        }
     }
 }

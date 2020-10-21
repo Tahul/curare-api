@@ -26,17 +26,19 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
 
         try {
-            if (!Auth::attempt($credentials)) {
-                return response()->json([
-                    'message' => Lang::get('auth.failed')
-                ], 401);
+            if (Auth::attempt($credentials)) {
+                /** @var User $user */
+                $user = Auth::user();
+
+                return response()->json($user->toArray());
             }
 
-            /** @var User $user */
-            $user = User::where('email', $credentials['email'])->firstOrFail();
-
-            return response()->json($user->toArray());
+            return response()->json([
+                'message' => Lang::get('auth.failed')
+            ], 401);
         } catch (Exception $e) {
+            info($e);
+
             return response()->json([
                 'message' => Lang::get('auth.error')
             ], 422);
@@ -51,23 +53,31 @@ class AuthController extends Controller
      */
     public function register(RegisterRequest $request)
     {
-        $userData = request(['name', 'email', 'password']);
+        $credentials = request(['name', 'email', 'password']);
 
         try {
             /** @var User $user */
             $user = User::create([
-                'name' => $userData['name'],
-                'email' => $userData['email'],
-                'password' => Hash::make($userData['password'])
+                'name' => $credentials['name'],
+                'email' => $credentials['email'],
+                'password' => Hash::make($credentials['password'])
             ]);
 
-            return response()->json(array_merge(
-                $user->toArray(),
-                [
-                    'message' => Lang::get('auth.welcome')
-                ]
-            ));
+            if (Auth::attempt($credentials)) {
+                return response()->json(array_merge(
+                    $user->toArray(),
+                    [
+                        'message' => Lang::get('auth.welcome')
+                    ]
+                ));
+            }
+
+            return response()->json([
+                'message' => Lang::get('auth.failed')
+            ], 401);
         } catch (Exception $e) {
+            info($e);
+
             return response()->json([
                 'message' => Lang::get('auth.error')
             ], 422);
@@ -83,7 +93,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         try {
-            Auth::logout();
+            Auth::guard('web')->logout();
 
             return response()->json([
                 'message' => Lang::get('auth.logout')

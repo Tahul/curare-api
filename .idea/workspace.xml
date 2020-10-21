@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="" />
+    <list default="true" id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Helpers/functions/core.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/curare-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/curare-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/sanctum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +30,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -122,9 +145,18 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-medialibrary" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQFQYgD1EsYA4LfsYXcLaCy5I0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -132,11 +164,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Requests/Profile" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Profile" />
@@ -160,6 +195,7 @@
       <updated>1601831892796</updated>
       <workItem from="1601831893830" duration="113000" />
       <workItem from="1601901666028" duration="1465000" />
+      <workItem from="1603198297493" duration="7928000" />
     </task>
     <servers />
   </component>
@@ -167,10 +203,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="594" y="282" key="#Inspections" timestamp="1602165662123">
+    <state x="594" y="282" key="#Inspections" timestamp="1602177194120">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="594" y="282" key="#Inspections/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602165662123" />
+    <state x="594" y="282" key="#Inspections/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602177194120" />
     <state x="773" y="320" key="#com.intellij.ide.util.MemberChooser" timestamp="1602001057963">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -183,25 +219,27 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="738" y="338" key="FileChooserDialogImpl/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602002326862" />
-    <state x="469" y="236" key="SettingsEditor" timestamp="1601994539518">
+    <state x="469" y="236" key="SettingsEditor" timestamp="1602177332159">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1601994539518" />
-    <state x="651" y="334" width="599" height="490" key="find.popup" timestamp="1602171946249">
+    <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602177332159" />
+    <state x="651" y="334" width="599" height="522" key="find.popup" timestamp="1603205679057">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="651" y="334" width="599" height="490" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602171946249" />
+    <state x="651" y="334" width="599" height="522" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1603205679057" />
+    <state x="570" y="292" width="569" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602249495189" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601994504138">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1601994504138" />
-    <state x="624" y="284" key="run.anything.popup" timestamp="1601994522314">
+    <state x="624" y="284" key="run.anything.popup" timestamp="1603207693718">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1601994522314" />
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1602172069698">
+    <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1603207693718" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1603241371073">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602172069698" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1603241371073" />
+    <state x="545" y="235" width="672" height="594" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602253473872" />
   </component>
 </project>

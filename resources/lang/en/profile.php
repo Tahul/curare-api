@@ -12,6 +12,10 @@ return [
     |
     */
 
-    'updated' => 'Your profile has been updated.',
-    'error' => 'An error occurred while updating your profile.'
+    'updated' => 'Profile updated.',
+    'error' => 'An error occurred while updating your profile.',
+    'avatar' => [
+        'updated' => 'Avatar updated.',
+        'removed' => 'Avatar removed.'
+    ]
 ];

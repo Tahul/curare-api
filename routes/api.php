@@ -22,14 +22,17 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('auth')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
-    Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::post('/logout', [AuthController::class, 'logout']);
+    });
 });
 
 /**
  * Profile routes
  */
 Route::middleware('auth:sanctum')->prefix('profiles')->group(function () {
-    Route::patch('/avatar', [ProfileController::class, 'updateAvatar']);
+    Route::post('/avatar', [ProfileController::class, 'updateAvatar']);
     Route::delete('/avatar', [ProfileController::class, 'deleteAvatar']);
     Route::get('/', [ProfileController::class, 'show']);
     Route::get('/{id}', [ProfileController::class, 'show']);
