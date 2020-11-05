@@ -33,7 +33,10 @@ class Profile extends Model implements HasMedia
     ];
 
     protected $appends = [
-        'avatar_url'
+        'name',
+        'avatar_url',
+        'followers',
+        'following'
     ];
 
     /**
@@ -60,5 +63,35 @@ class Profile extends Model implements HasMedia
         }
 
         return null;
+    }
+
+    /**
+     * Return the `name` attribute
+     *
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return $this->user->name;
+    }
+
+    /**
+     * Return the `followers` attribute
+     *
+     * @return string
+     */
+    public function getFollowersAttribute()
+    {
+        return 0;
+    }
+
+    /**
+     * Return the `following` attribute
+     *
+     * return @string
+     */
+    public function getFollowingAttribute()
+    {
+        return 0;
     }
 }

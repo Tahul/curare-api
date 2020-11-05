@@ -24,10 +24,10 @@ class ProfileUpdateRequest extends ApiFormRequest
     public function rules()
     {
         return [
-            'first_name' => ['string', 'max:255'],
-            'last_name' => ['string', 'max:255'],
-            'description' => ['string'],
-            'url' => ['string']
+            'first_name' => ['nullable', 'string', 'max:255'],
+            'last_name' => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'url' => ['nullable', 'string']
         ];
     }
 }

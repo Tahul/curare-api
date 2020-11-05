@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Profile\ProfileAvatarUpdateRequest;
 use App\Http\Requests\Profile\ProfileUpdateRequest;
 use App\Models\Profile;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class ProfileController extends Controller
             if (is_null($id)) {
                 $profile = $this->getCurrentUserProfile($request);
             } else {
-                $profile = Profile::where('user_id', $id)->firstOrFail();
+                $profile = User::where('name', $id)->firstOrFail()->profile;
             }
 
             return response()->json($profile->toArray());
