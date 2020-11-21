@@ -3,8 +3,9 @@
 
 /* Has this package seems to have a problem w/ PhpStorm inspection; disable the error on this file */
 
-namespace App\Models;
+namespace App\Models\Profile;
 
+use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

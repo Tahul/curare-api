@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OpenGraph/OpenGraphController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Link/LinkPreviewRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/curare-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/curare-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/UserObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/UserObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_135026_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_08_135026_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_08_170936_create_media_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_08_170936_create_media_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,11 +168,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Models/User" />
+      <recent name="$PROJECT_DIR$/app/Models/Profile" />
+      <recent name="$PROJECT_DIR$/app/Models/Collection" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Collection" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/Link" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests/Profile" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Profile" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests/Auth" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Auth" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
@@ -197,7 +199,7 @@
       <workItem from="1604523816342" duration="1104000" />
       <workItem from="1604689596209" duration="184000" />
       <workItem from="1605201442095" duration="4735000" />
-      <workItem from="1605982585948" duration="1270000" />
+      <workItem from="1605982585948" duration="3267000" />
     </task>
     <servers />
   </component>
@@ -217,6 +219,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="706" y="120" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602078321055" />
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605994105579">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1605994105579" />
     <state x="738" y="338" key="FileChooserDialogImpl" timestamp="1602002326862">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -225,10 +231,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602177332159" />
-    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1605205081882">
+    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1605994577656">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1605205081882" />
+    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1605994577656" />
     <state x="570" y="292" width="569" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602249495189" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601994504138">
       <screen x="0" y="0" width="1920" height="1200" />
@@ -238,10 +244,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1603207693718" />
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1605991795712">
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1605994876479">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1605991795712" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1605994876479" />
     <state x="545" y="235" width="672" height="594" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602253473872" />
   </component>
 </project>

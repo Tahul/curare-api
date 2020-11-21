@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\User;
+use App\Models\User\User;
 use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 

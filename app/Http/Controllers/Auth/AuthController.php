@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
-use App\Models\User;
+use App\Models\User\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
@@ -76,8 +76,6 @@ class AuthController extends Controller
                 'message' => Lang::get('auth.failed')
             ], 401);
         } catch (Exception $e) {
-            info($e);
-
             return response()->json([
                 'message' => Lang::get('auth.error')
             ], 422);
