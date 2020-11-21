@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\OpenGraph\OpenGraphController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,11 @@ Route::middleware('auth:sanctum')->prefix('profiles')->group(function () {
     Route::get('/{id}', [ProfileController::class, 'show']);
     Route::patch('/', [ProfileController::class, 'update']);
 });
+
+/**
+ * OpenGraph routes
+ */
+Route::get('/opengraph/preview', [OpenGraphController::class, 'preview']);
 
 /**
  * User routes
