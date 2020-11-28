@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Collection\CollectionController;
 use App\Http\Controllers\OpenGraph\OpenGraphController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
@@ -44,6 +45,17 @@ Route::middleware('auth:sanctum')->prefix('profiles')->group(function () {
  * OpenGraph routes
  */
 Route::get('/opengraph/preview', [OpenGraphController::class, 'preview']);
+
+/**
+ * Collections routes
+ */
+Route::middleware('auth:sanctum')->prefix('collections')->group(function () {
+    Route::post('/', [CollectionController::class, 'store']);
+    Route::patch('/{model}', [CollectionController::class, 'update']);
+    Route::delete('/{model}', [CollectionController::class, 'delete']);
+    Route::get('/', [CollectionController::class, 'index']);
+    Route::get('/{user}', [CollectionController::class, 'index']);
+});
 
 /**
  * User routes

@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Collection\Collection;
 use App\Models\User\User;
+use App\Observers\CollectionObserver;
 use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // Observers
         User::observe(UserObserver::class);
+        Collection::observe(CollectionObserver::class);
     }
 }
