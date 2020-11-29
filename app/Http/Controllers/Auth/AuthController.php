@@ -64,12 +64,14 @@ class AuthController extends Controller
             ]);
 
             if (Auth::attempt($credentials)) {
-                return response()->json(array_merge(
-                    $user->toArray(),
-                    [
-                        'message' => Lang::get('auth.welcome')
-                    ]
-                ));
+                return response()->json(
+                    array_merge(
+                        $user->toArray(),
+                        [
+                            'message' => Lang::get('auth.welcome')
+                        ]
+                    )
+                );
             }
 
             return response()->json([

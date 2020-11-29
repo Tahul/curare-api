@@ -66,8 +66,6 @@ trait UserResourceController
                 )
             );
         } catch (Exception $e) {
-            info($e);
-
             return response()->json([
                 'message' => Lang::get($this->model->name . '.error')
             ], 400);
@@ -99,13 +97,18 @@ trait UserResourceController
         // Update the model & return it
         try {
             if ($this->user->can('update', $model)) {
-                $resource = $model->update(
+                $model->update(
                     $request->all()
                 );
 
-                return response()->json(array_merge([
-                    'message' => Lang::get($this->model->name . '.updated')
-                ], $resource->toArray()));
+                return response()->json(
+                    array_merge(
+                        [
+                            'message' => Lang::get($this->model->name . '.updated')
+                        ],
+                        $model->toArray()
+                    )
+                );
             } else {
                 return response()->json([
                     'message' => Lang::get($this->model->name . '.permission')
