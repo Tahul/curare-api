@@ -1,18 +1,24 @@
 <?php
+/** @noinspection PhpSuperClassIncompatibleWithInterfaceInspection */
+
+/* Has this package seems to have a problem w/ PhpStorm inspection; disable the error on this file */
 
 namespace App\Models\Collection;
 
 use App\Models\User\User;
-use App\Traits\UserResourceModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Collection extends Model
+class Collection extends Model implements HasMedia
 {
-    use HasFactory, UserResourceModel;
+    use HasFactory, InteractsWithMedia;
 
-    public $name = 'collections';
+    public $NAME = 'collections';
+
+    public string $IMAGE_COLLECTION_NAME = 'images';
 
     protected $fillable = [
         'user_id',
@@ -22,11 +28,13 @@ class Collection extends Model
     ];
 
     protected $hidden = [
-        'updated_at'
+        'updated_at',
+        'media'
     ];
 
     protected $appends = [
-        'linksCount'
+        'links_count',
+        'image_url'
     ];
 
     /**
@@ -62,5 +70,21 @@ class Collection extends Model
     public function getLinksCountAttribute()
     {
         return 0;
+    }
+
+    /**
+     * Return the `avatar_url` attribute
+     *
+     * @return string|null
+     */
+    public function getImageUrlAttribute()
+    {
+        $media = $this->getFirstMedia($this->IMAGE_COLLECTION_NAME);
+
+        if (!is_null($media)) {
+            return $media->getFullUrl();
+        }
+
+        return null;
     }
 }

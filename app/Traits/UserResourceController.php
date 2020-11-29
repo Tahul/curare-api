@@ -24,7 +24,7 @@ trait UserResourceController
      */
     public function index(User $user)
     {
-        return $user->getRelationValue($this->model->name);
+        return $user->getRelationValue($this->model->NAME);
     }
 
     /**
@@ -41,7 +41,7 @@ trait UserResourceController
         // Validator checks
         if ($validator->fails()) {
             return response()->json([
-                'message' => Lang::get($this->model->name . '.error'),
+                'message' => Lang::get($this->model->NAME . '.error'),
                 'errors' => $validator->errors()
             ], 400);
         }
@@ -60,14 +60,14 @@ trait UserResourceController
             return response()->json(
                 array_merge(
                     [
-                        'message' => Lang::get($this->model->name . '.created')
+                        'message' => Lang::get($this->model->NAME . '.created')
                     ],
                     $this->model->toArray()
                 )
             );
         } catch (Exception $e) {
             return response()->json([
-                'message' => Lang::get($this->model->name . '.error')
+                'message' => Lang::get($this->model->NAME . '.error')
             ], 400);
         }
     }
@@ -89,7 +89,7 @@ trait UserResourceController
         // Validator checks
         if ($validator->fails()) {
             return response()->json([
-                'message' => Lang::get($this->model->name . '.error'),
+                'message' => Lang::get($this->model->NAME . '.error'),
                 'errors' => $validator->errors()
             ], 400);
         }
@@ -104,19 +104,19 @@ trait UserResourceController
                 return response()->json(
                     array_merge(
                         [
-                            'message' => Lang::get($this->model->name . '.updated')
+                            'message' => Lang::get($this->model->NAME . '.updated')
                         ],
                         $model->toArray()
                     )
                 );
             } else {
                 return response()->json([
-                    'message' => Lang::get($this->model->name . '.permission')
+                    'message' => Lang::get($this->model->NAME . '.permission')
                 ], 403);
             }
         } catch (Exception $e) {
             return response()->json([
-                'message' => Lang::get($this->model->name . '.error')
+                'message' => Lang::get($this->model->NAME . '.error')
             ], 400);
         }
     }
@@ -138,17 +138,17 @@ trait UserResourceController
                 $model->delete();
 
                 return response()->json([
-                    'message' => Lang::get($this->model->name . '.deleted'),
+                    'message' => Lang::get($this->model->NAME . '.deleted'),
                     'deleted' => $modelId
                 ]);
             } else {
                 return response()->json([
-                    'message' => Lang::get($this->model->name . 'permission')
+                    'message' => Lang::get($this->model->NAME . 'permission')
                 ], 403);
             }
         } catch (Exception $e) {
             return response()->json([
-                'message' => Lang::get($this->model->name . '.error')
+                'message' => Lang::get($this->model->NAME . '.error')
             ], 400);
         }
     }

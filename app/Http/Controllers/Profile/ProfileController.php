@@ -91,11 +91,11 @@ class ProfileController extends Controller
             $profile = $this->getCurrentUserProfile($request);
 
             // Delete current avatar
-            if (!is_null($profile->getFirstMedia($this->AVATAR_COLLECTION_NAME))) {
-                $profile->getFirstMedia($this->AVATAR_COLLECTION_NAME)->delete();
+            if (!is_null($profile->getFirstMedia($profile->AVATAR_COLLECTION_NAME))) {
+                $profile->getFirstMedia($profile->AVATAR_COLLECTION_NAME)->delete();
             }
 
-            $profile->addMedia($request->files->get('avatar'))->toMediaCollection($this->AVATAR_COLLECTION_NAME);
+            $profile->addMedia($request->files->get('avatar'))->toMediaCollection($profile->AVATAR_COLLECTION_NAME);
 
             return response()->json(
                 array_merge(
@@ -124,7 +124,7 @@ class ProfileController extends Controller
             $profile = $this->getCurrentUserProfile($request);
 
             // Delete current avatar
-            if (!is_null($profile->getFirstMedia($this->AVATAR_COLLECTION_NAME))) {
+            if (!is_null($profile->getFirstMedia($profile->AVATAR_COLLECTION_NAME))) {
                 $profile->getFirstMedia($this->AVATAR_COLLECTION_NAME)->delete();
             }
 

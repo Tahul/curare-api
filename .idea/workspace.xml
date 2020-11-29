@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Collection/CollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Collection/CollectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Profile/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Collection/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Collection/Collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Profile/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Profile/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/UserResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/UserResourceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/UserResourceModel.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,15 +163,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests/Collection" />
       <recent name="$PROJECT_DIR$/app/Models/User" />
       <recent name="$PROJECT_DIR$/app/Models/Profile" />
       <recent name="$PROJECT_DIR$/app/Models/Collection" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Collection" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests/Link" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,7 +196,7 @@
       <workItem from="1604689596209" duration="184000" />
       <workItem from="1605201442095" duration="4735000" />
       <workItem from="1605982585948" duration="17796000" />
-      <workItem from="1606581896605" duration="2106000" />
+      <workItem from="1606581896605" duration="5194000" />
     </task>
     <servers />
   </component>
@@ -216,10 +220,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="706" y="120" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602078321055" />
-    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606069778451">
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606668614665">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606069778451" />
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606668614665" />
     <state x="738" y="338" key="FileChooserDialogImpl" timestamp="1602002326862">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -228,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606016305048" />
-    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1606598522250">
+    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1606671471256">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606598522250" />
+    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606671471256" />
     <state x="570" y="292" width="569" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602249495189" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601994504138">
       <screen x="0" y="0" width="1920" height="1200" />
@@ -241,10 +245,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1603207693718" />
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1606590079401">
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1606670527393">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606590079401" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606670527393" />
     <state x="545" y="235" width="672" height="594" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602253473872" />
   </component>
 </project>

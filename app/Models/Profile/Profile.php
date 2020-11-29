@@ -14,8 +14,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Profile extends Model implements HasMedia
 {
-    use HasFactory;
-    use InteractsWithMedia;
+    use HasFactory, InteractsWithMedia;
+
+    public string $AVATAR_COLLECTION_NAME = 'avatars';
 
     protected $fillable = [
         'user_id',
@@ -56,7 +57,7 @@ class Profile extends Model implements HasMedia
      */
     public function getAvatarUrlAttribute()
     {
-        $media = $this->getFirstMedia('avatars');
+        $media = $this->getFirstMedia($this->AVATAR_COLLECTION_NAME);
 
         if (!is_null($media)) {
             return $media->getFullUrl();
