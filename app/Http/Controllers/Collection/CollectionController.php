@@ -39,25 +39,23 @@ class CollectionController extends Controller
      * Update the current user avatar.
      *
      * @param CollectionImageUpdateRequest $request
-     * @param $modelId
+     * @param Collection $model
      * @return JsonResponse
      */
-    public function updateImage(CollectionImageUpdateRequest $request, $modelId)
+    public function updateImage(CollectionImageUpdateRequest $request, Collection $model)
     {
         try {
-            $model = $this->model->find($modelId);
-
             // Delete current avatar
             if (!is_null($model->getFirstMedia($this->model->IMAGE_COLLECTION_NAME))) {
                 $model->getFirstMedia($this->model->IMAGE_COLLECTION_NAME)->delete();
             }
 
-            $model->addMedia($request->files->get('avatar'))->toMediaCollection($this->model->IMAGE_COLLECTION_NAME);
+            $model->addMedia($request->files->get('image'))->toMediaCollection($this->model->IMAGE_COLLECTION_NAME);
 
             return response()->json(
                 array_merge(
                     [
-                        'message' => Lang::get('profile.avatar.updated')
+                        'message' => Lang::get('collections.updated')
                     ],
                     $model->refresh()->toArray()
                 )
@@ -73,14 +71,12 @@ class CollectionController extends Controller
      * Delete the current user avatar.
      *
      * @param Request $request
-     * @param $modelId
+     * @param Collection $model
      * @return JsonResponse
      */
-    public function deleteAvatar(Request $request, $modelId)
+    public function deleteImage(Request $request, Collection $model)
     {
         try {
-            $model = $this->model->find($modelId);
-
             // Delete current avatar
             if (!is_null($model->getFirstMedia($this->model->IMAGE_COLLECTION_NAME))) {
                 $model->getFirstMedia($this->model->IMAGE_COLLECTION_NAME)->delete();
@@ -89,7 +85,7 @@ class CollectionController extends Controller
             return response()->json(
                 array_merge(
                     [
-                        'message' => Lang::get('profile.avatar.removed')
+                        'message' => Lang::get('collections.updated')
                     ],
                     $model->refresh()->toArray()
                 )

@@ -51,6 +51,8 @@ Route::get('/opengraph/preview', [OpenGraphController::class, 'preview']);
  */
 Route::middleware('auth:sanctum')->prefix('collections')->group(function () {
     Route::post('/', [CollectionController::class, 'store']);
+    Route::post('/{model}/image', [CollectionController::class, 'updateImage']);
+    Route::delete('/{model}/image', [CollectionController::class, 'deleteImage']);
     Route::patch('/{model}', [CollectionController::class, 'update']);
     Route::delete('/{model}', [CollectionController::class, 'delete']);
     Route::get('/', [CollectionController::class, 'index']);
