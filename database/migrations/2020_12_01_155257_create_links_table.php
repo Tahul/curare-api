@@ -28,6 +28,7 @@ class CreateLinksTable extends Migration
             $table->string('url');
             $table->json('ogp');
             $table->integer('clicks')->default(0);
+            $table->integer('order')->default(0);
 
             // Timestamps
             $table->timestamps();
