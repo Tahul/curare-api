@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Collection/CollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Collection/CollectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Link/LinkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Link/LinkController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Collection/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Collection/Collection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +34,9 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="INCOMING_CHECK_STRATEGY" value="Always" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -146,7 +165,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iQFQYgD1EsYA4LfsYXcLaCy5I0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -156,7 +177,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -164,11 +185,11 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Link" />
+      <recent name="$PROJECT_DIR$/app/Models/Link" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/Collection" />
       <recent name="$PROJECT_DIR$/app/Models/User" />
       <recent name="$PROJECT_DIR$/app/Models/Profile" />
-      <recent name="$PROJECT_DIR$/app/Models/Collection" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Collection" />
     </key>
   </component>
   <component name="RunManager">
@@ -178,6 +199,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="" />
@@ -193,12 +217,26 @@
       <workItem from="1604689596209" duration="184000" />
       <workItem from="1605201442095" duration="4735000" />
       <workItem from="1605982585948" duration="17796000" />
-      <workItem from="1606581896605" duration="7374000" />
+      <workItem from="1606581896605" duration="15242000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="594" y="282" key="#Inspections" timestamp="1602177194120">
@@ -217,35 +255,43 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="706" y="120" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602078321055" />
-    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606668614665">
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606844636876">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606668614665" />
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606844636876" />
+    <state x="544" y="179" key="CommitChangelistDialog2" timestamp="1606845498875">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="544" y="179" key="CommitChangelistDialog2/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606845498875" />
+    <state x="100" y="128" width="1720" height="972" key="DiffContextDialog" timestamp="1606845756718">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="100" y="128" width="1720" height="972" key="DiffContextDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606845756718" />
     <state x="738" y="338" key="FileChooserDialogImpl" timestamp="1602002326862">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="738" y="338" key="FileChooserDialogImpl/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602002326862" />
-    <state x="469" y="236" key="SettingsEditor" timestamp="1606016305048">
+    <state x="469" y="236" key="SettingsEditor" timestamp="1606846593391">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606016305048" />
-    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1606779975751">
+    <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606846593391" />
+    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1606779983417">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606779975751" />
+    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606779983417" />
     <state x="570" y="292" width="569" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602249495189" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601994504138">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1601994504138" />
-    <state x="624" y="284" key="run.anything.popup" timestamp="1603207693718">
+    <state x="624" y="284" key="run.anything.popup" timestamp="1606846097113">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1603207693718" />
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1606779916431">
+    <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606846097113" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1606851882845">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606779916431" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606851882845" />
     <state x="545" y="235" width="672" height="594" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602253473872" />
   </component>
 </project>

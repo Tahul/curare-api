@@ -5,10 +5,12 @@
 
 namespace App\Models\Collection;
 
+use App\Models\Link\Link;
 use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -45,6 +47,16 @@ class Collection extends Model implements HasMedia
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Links relation.
+     *
+     * @return HasMany
+     */
+    public function links()
+    {
+        return $this->hasMany(Link::class);
     }
 
     /**

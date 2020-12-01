@@ -25,11 +25,23 @@ trait UserResourceController
     {
         $user = $this->user;
 
-        if (request()->has('userId')) {
-            $user = User::find(request()->userId);
+        $data = null;
+
+        try {
+            if (request()->has('userId')) {
+                $user = User::find(request()->userId);
+            }
+
+            $data = $user->getRelationValue($this->model->NAME);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => Lang::get($this->model->NAME . '.error')
+            ]);
         }
 
-        return $user->getRelationValue($this->model->NAME);
+        return response()->json(
+            !is_null($data) ? $data : []
+        );
     }
 
     /**
