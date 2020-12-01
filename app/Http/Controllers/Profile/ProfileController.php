@@ -44,8 +44,9 @@ class ProfileController extends Controller
             return response()->json($profile->toArray());
         } catch (Exception $e) {
             return response()->json([
-                'message' => Lang::get('profile.error')
-            ]);
+                'message' => Lang::get('profile.not_found'),
+                'redirect' => '/'
+            ], 422);
         }
     }
 
@@ -75,7 +76,7 @@ class ProfileController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get('profile.error')
-            ]);
+            ], 422);
         }
     }
 
@@ -108,7 +109,7 @@ class ProfileController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get('profile.error')
-            ]);
+            ], 422);
         }
     }
 
@@ -139,7 +140,7 @@ class ProfileController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get('profile.error')
-            ]);
+            ], 422);
         }
     }
 }
