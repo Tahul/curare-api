@@ -17,8 +17,4 @@ return [
     'deleted' => 'Collection deleted.',
     'error' => 'An error occurred while updating your collection.',
     'permission' => 'You do not have the permission to perform this action on this collection.',
-    'avatar' => [
-        'updated' => 'Avatar updated.',
-        'removed' => 'Avatar removed.'
-    ]
 ];

@@ -14,6 +14,7 @@ return [
 
     'updated' => 'Profile updated.',
     'error' => 'An error occurred while updating your profile.',
+    'not_found' => 'Cannot find this profile.',
     'avatar' => [
         'updated' => 'Avatar updated.',
         'removed' => 'Avatar removed.'
