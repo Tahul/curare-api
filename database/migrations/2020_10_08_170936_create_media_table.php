@@ -12,6 +12,7 @@ class CreateMediaTable extends Migration
             $table->bigIncrements('id');
 
             // Relations
+            // - Morph relation
             $table->morphs('model');
 
             // Attributes

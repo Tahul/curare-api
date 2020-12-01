@@ -17,6 +17,7 @@ class CreateSessionsTable extends Migration
             $table->string('id')->primary();
 
             // Relations
+            // - User relation
             $table->foreignId('user_id')->nullable()->index();
 
             // Attributes
