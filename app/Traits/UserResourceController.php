@@ -19,11 +19,16 @@ trait UserResourceController
     /**
      * Get all the user request resource.
      *
-     * @param User $user
      * @return mixed
      */
-    public function index(User $user)
+    public function index()
     {
+        $user = $this->user;
+
+        if (request()->has('userId')) {
+            $user = User::find(request()->userId);
+        }
+
         return $user->getRelationValue($this->model->NAME);
     }
 
@@ -68,7 +73,7 @@ trait UserResourceController
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get($this->model->NAME . '.error')
-            ], 400);
+            ], 422);
         }
     }
 
@@ -117,7 +122,7 @@ trait UserResourceController
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get($this->model->NAME . '.error')
-            ], 400);
+            ], 422);
         }
     }
 
@@ -149,7 +154,7 @@ trait UserResourceController
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get($this->model->NAME . '.error')
-            ], 400);
+            ], 422);
         }
     }
 }

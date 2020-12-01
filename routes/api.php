@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Collection\CollectionController;
+use App\Http\Controllers\Link\LinkController;
 use App\Http\Controllers\OpenGraph\OpenGraphController;
 use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Http\Request;
@@ -56,7 +57,16 @@ Route::middleware('auth:sanctum')->prefix('collections')->group(function () {
     Route::patch('/{model}', [CollectionController::class, 'update']);
     Route::delete('/{model}', [CollectionController::class, 'delete']);
     Route::get('/', [CollectionController::class, 'index']);
-    Route::get('/{user}', [CollectionController::class, 'index']);
+});
+
+/**
+ * Links routes
+ */
+Route::middleware('auth:sanctum')->prefix('links')->group(function () {
+    Route::post('/', [LinkController::class, 'store']);
+    Route::patch('/{model}', [LinkController::class, 'update']);
+    Route::delete('/{model}', [LinkController::class, 'delete']);
+    Route::get('/', [LinkController::class, 'index']);
 });
 
 /**
