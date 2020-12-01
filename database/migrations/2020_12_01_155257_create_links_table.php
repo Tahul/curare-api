@@ -26,6 +26,7 @@ class CreateLinksTable extends Migration
 
             // Attributes
             $table->string('url');
+            $table->longText('description')->nullable();
             $table->json('ogp');
             $table->integer('clicks')->default(0);
             $table->integer('order')->default(0);
