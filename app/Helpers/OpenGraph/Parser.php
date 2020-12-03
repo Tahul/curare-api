@@ -7,21 +7,25 @@ namespace App\Helpers\OpenGraph {
     class Parser {
         /**
          * Parse content into an array.
-         * @param $content mixed
+         * @param $url string
          * @return array
          */
-        public static function parse($content) {
-            $doc = new DOMDocument();
+        public static function parse(string $url) {
+            $domain = parse_url($url)["host"];
+            $content = file_get_contents($url);
+            $ogp = [
+                'domain' => $domain,
+                'favicon' => 'https://www.google.com/s2/favicons?domain=' . $domain
+            ];
 
             // Fudge to handle a situation when an encoding isn't present
-            if (strpos($content, 'xml encoding=')===false)
-                $content = '<?xml encoding="utf-8" ?>' . $content;
+            if (strpos($content, 'xml encoding=')===false) $content = '<?xml encoding="utf-8" ?>' . $content;
 
+            $doc = new DOMDocument();
             @$doc->loadHTML($content);
 
-            $interested_in = ['description', 'keywords', 'og', 'fb', 'twitter']; // Open graph namespaces we're interested in (open graph + extensions)
-
-            $ogp = [];
+            // Open graph namespaces we're interested in (open graph + extensions)
+            $interested_in = ['description', 'keywords', 'og', 'fb', 'twitter'];
 
             // Title
             $titleTag = $doc->getElementsByTagName('title')->item(0);
