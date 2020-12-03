@@ -1,5 +1,5 @@
 <?php
-$files = glob(__DIR__ . '/functions/*.php');
+$files = glob(__DIR__ . '/Functions/*.php');
 
 if ($files === false) {
     throw new RuntimeException("Failed to glob for function files");
