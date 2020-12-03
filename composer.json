@@ -16,7 +16,8 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
         "spatie/laravel-medialibrary": "^8.0.0",
-        "ext-dom": "*"
+        "ext-dom": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
