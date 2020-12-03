@@ -2,6 +2,7 @@
 
 namespace App\Models\Link;
 
+use App\Casts\Json;
 use App\Models\User\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +13,7 @@ class Link extends Model
 {
     use HasFactory;
 
-    public $NAME = 'collections';
+    public $NAME = 'links';
 
     protected $fillable = [
         'user_id',
@@ -22,7 +23,7 @@ class Link extends Model
     ];
 
     protected $casts = [
-        'ogp' => 'json',
+        'ogp' => Json::class,
     ];
 
     protected $hidden = [
@@ -57,11 +58,13 @@ class Link extends Model
         return [
             'store' => [
                 'url' => 'required|url',
-                'collection_id' => 'exists:collections,id'
+                'collection_id' => 'exists:collections,id',
+                'ogp' => 'array|nullable'
             ],
             'update' => [
                 'url' => 'url',
-                'collection_id' => 'exists:collections,id'
+                'collection_id' => 'exists:collections,id',
+                'ogp' => 'array|nullable'
             ]
         ];
     }
