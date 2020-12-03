@@ -160,7 +160,7 @@ trait UserResourceController
                 ]);
             } else {
                 return response()->json([
-                    'message' => Lang::get($this->model->NAME . 'permission')
+                    'message' => Lang::get($this->model->NAME . '.permission')
                 ], 403);
             }
         } catch (Exception $e) {
