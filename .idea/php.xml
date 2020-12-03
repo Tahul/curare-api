@@ -119,11 +119,6 @@
       <path value="$PROJECT_DIR$/vendor/spatie/image" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-medialibrary" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/vendor/fusonic/linq" />
-      <path value="$PROJECT_DIR$/vendor/fusonic/opengraph" />
-      <path value="$PROJECT_DIR$/vendor/mapkyca/php-ogp" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

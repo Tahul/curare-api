@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08403fe8-1164-4cdb-87e5-1490ea1c22f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/curare-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/curare-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OpenGraph/OpenGraphController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OpenGraph/OpenGraphController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,11 +158,6 @@
       <path value="$PROJECT_DIR$/vendor/spatie/image" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-medialibrary" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/vendor/fusonic/linq" />
-      <path value="$PROJECT_DIR$/vendor/fusonic/opengraph" />
-      <path value="$PROJECT_DIR$/vendor/mapkyca/php-ogp" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQFQYgD1EsYA4LfsYXcLaCy5I0" />
@@ -217,7 +213,8 @@
       <workItem from="1604689596209" duration="184000" />
       <workItem from="1605201442095" duration="4735000" />
       <workItem from="1605982585948" duration="17796000" />
-      <workItem from="1606581896605" duration="16248000" />
+      <workItem from="1606581896605" duration="23915000" />
+      <workItem from="1607015622105" duration="4615000" />
     </task>
     <servers />
   </component>
@@ -234,19 +231,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="594" y="282" key="#Inspections" timestamp="1602177194120">
+    <state x="594" y="282" key="#Inspections" timestamp="1606956653597">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="594" y="282" key="#Inspections/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602177194120" />
+    <state x="594" y="282" key="#Inspections/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606956653597" />
     <state x="560" y="262" width="800" height="723" key="#Intentions" timestamp="1605996914366">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="560" y="262" width="800" height="723" key="#Intentions/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1605996914366" />
+    <state x="693" y="428" key="#Notifications" timestamp="1607016327546">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="693" y="428" key="#Notifications/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1607016327546" />
     <state x="773" y="320" key="#com.intellij.ide.util.MemberChooser" timestamp="1602001057963">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -255,14 +257,18 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="706" y="120" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1602078321055" />
-    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606844636876">
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607029840322">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606844636876" />
+    <state x="698" y="359" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1607029840322" />
     <state x="544" y="179" key="CommitChangelistDialog2" timestamp="1606845498875">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="544" y="179" key="CommitChangelistDialog2/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606845498875" />
+    <state x="718" y="530" key="ComposerInitDialogKey" timestamp="1606956550176">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="718" y="530" key="ComposerInitDialogKey/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606956550176" />
     <state x="100" y="128" width="1720" height="972" key="DiffContextDialog" timestamp="1606845756718">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -275,10 +281,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="469" y="236" key="SettingsEditor/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606846593391" />
-    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1606779983417">
+    <state x="651" y="334" width="599" height="550" key="find.popup" timestamp="1607032589967">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606779983417" />
+    <state x="651" y="334" width="599" height="550" key="find.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1607032589967" />
     <state x="570" y="292" width="569" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602249495189" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1601994504138">
       <screen x="0" y="0" width="1920" height="1200" />
@@ -288,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="624" y="284" key="run.anything.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606846097113" />
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1606854115720">
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup" timestamp="1607032835312">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1606854115720" />
+    <state x="623" y="269" width="672" height="678" key="search.everywhere.popup/0.-1080.1920.1080/0.0.1920.1200@0.0.1920.1200" timestamp="1607032835312" />
     <state x="545" y="235" width="672" height="594" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1602253473872" />
   </component>
 </project>

@@ -2,6 +2,7 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="PhpMissingFieldTypeInspection" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="PhpPossiblePolymorphicInvocationInspection" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedFieldInspection" enabled="true" level="INFORMATION" enabled_by_default="true" />
   </profile>
 </component>
