@@ -7,6 +7,8 @@ use App\Models\Collection\Collection;
 use App\Models\Link\Link;
 use App\Models\User\User;
 use App\Traits\UserResourceController;
+use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
 class LinkController extends Controller
@@ -34,7 +36,7 @@ class LinkController extends Controller
     /**
      * Get all the user request resource.
      *
-     * @return mixed
+     * @return JsonResponse
      */
     public function index()
     {
@@ -53,5 +55,27 @@ class LinkController extends Controller
         return response()->json(
             !is_null($data) ? $data : []
         );
+    }
+
+    /**
+     * Increment the click count on a link.
+     *
+     * @param Link $model
+     * @return JsonResponse
+     */
+    public function click(Link $model) {
+        try {
+            $model->clicks = $model->clicks + 1;
+
+            $model->save();
+
+            return response()->json($model->toArray());
+        } catch (Exception $e) {
+            info('Failed to increment click for link ' . $model->id);
+        }
+
+        return response()->json([
+            'clicked' => false
+        ]);
     }
 }

@@ -20,6 +20,8 @@ class Link extends Model
         'collection_id',
         'url',
         'ogp',
+        'clicks',
+        'order'
     ];
 
     protected $casts = [

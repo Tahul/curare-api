@@ -65,6 +65,7 @@ Route::middleware('auth:sanctum')->prefix('collections')->group(function () {
 Route::middleware('auth:sanctum')->prefix('links')->group(function () {
     Route::post('/', [LinkController::class, 'store']);
     Route::get('/preview', [OpenGraphController::class, 'preview']);
+    Route::post('/{model}/click', [LinkController::class, 'click']);
     Route::patch('/{model}', [LinkController::class, 'update']);
     Route::delete('/{model}', [LinkController::class, 'delete']);
     Route::get('/', [LinkController::class, 'index']);
