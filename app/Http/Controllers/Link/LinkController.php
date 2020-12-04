@@ -74,8 +74,6 @@ class LinkController extends Controller
             info('Failed to increment click for link ' . $model->id);
         }
 
-        return response()->json([
-            'clicked' => false
-        ]);
+        return response()->json($model->toArray());
     }
 }
