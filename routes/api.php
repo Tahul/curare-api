@@ -5,6 +5,7 @@ use App\Http\Controllers\Collection\CollectionController;
 use App\Http\Controllers\Link\LinkController;
 use App\Http\Controllers\OpenGraph\OpenGraphController;
 use App\Http\Controllers\Profile\ProfileController;
+use App\Models\Collection\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -52,6 +53,7 @@ Route::get('/opengraph/preview', [OpenGraphController::class, 'preview']);
  */
 Route::middleware('auth:sanctum')->prefix('collections')->group(function () {
     Route::post('/', [CollectionController::class, 'store']);
+    Route::get('/{model}', [CollectionController::class, 'show']);
     Route::post('/{model}/image', [CollectionController::class, 'updateImage']);
     Route::delete('/{model}/image', [CollectionController::class, 'deleteImage']);
     Route::patch('/{model}', [CollectionController::class, 'update']);
