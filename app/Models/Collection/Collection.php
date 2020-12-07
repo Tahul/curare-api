@@ -31,7 +31,8 @@ class Collection extends Model implements HasMedia
 
     protected $hidden = [
         'updated_at',
-        'media'
+        'media',
+        'links'
     ];
 
     protected $appends = [
@@ -81,7 +82,7 @@ class Collection extends Model implements HasMedia
      */
     public function getLinksCountAttribute()
     {
-        return 0;
+        return $this->links->count();
     }
 
     /**
