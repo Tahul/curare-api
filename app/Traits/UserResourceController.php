@@ -45,6 +45,24 @@ trait UserResourceController
     }
 
     /**
+     * Get a single model entity.
+     *
+     * @param mixed $modelId
+     * @return JsonResponse
+     */
+    public function show($modelId) {
+        try {
+            $model = $this->model->findOrFail($modelId);
+
+            return response()->json($model->toArray());
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => Lang::get($this->model->NAME . '.error')
+            ]);
+        }
+    }
+
+    /**
      * Store the user resource.
      *
      * @param Request $request
