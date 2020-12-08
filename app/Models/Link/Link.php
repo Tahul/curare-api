@@ -2,6 +2,7 @@
 
 namespace App\Models\Link;
 
+use App\Casts\Date;
 use App\Casts\Json;
 use App\Models\User\User;
 use Illuminate\Database\Eloquent\Collection;
@@ -26,6 +27,7 @@ class Link extends Model
 
     protected $casts = [
         'ogp' => Json::class,
+        'created_at' => 'datetime:y-m-d @ H:i:s'
     ];
 
     protected $hidden = [
