@@ -83,7 +83,7 @@ class Profile extends Model implements HasMedia
      */
     public function getFollowersAttribute()
     {
-        return 0;
+        return $this->user->followers->count();
     }
 
     /**
@@ -93,6 +93,6 @@ class Profile extends Model implements HasMedia
      */
     public function getFollowingAttribute()
     {
-        return 0;
+        return $this->user->following->count();
     }
 }
