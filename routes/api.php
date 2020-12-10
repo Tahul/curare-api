@@ -3,10 +3,9 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Collection\CollectionController;
 use App\Http\Controllers\Link\LinkController;
-use App\Http\Controllers\OpenGraph\OpenGraphController;
 use App\Http\Controllers\Profile\ProfileController;
+use App\Http\Controllers\OpenGraph\OpenGraphController;
 use App\Http\Controllers\Relation\RelationController;
-use App\Models\Collection\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

@@ -39,8 +39,7 @@ class RelationController extends Controller
 
             return response()->json([
                 'message' => Lang::get('relations.followed', ['name' => $user->name]),
-                'following' => $this->user->followers->all(),
-                'followed_count' => $user->following->count()
+                'followed_profile' => $user->profile
             ]);
         } catch (Exception $e) {
             return response()->json([
@@ -61,8 +60,7 @@ class RelationController extends Controller
 
             return response()->json([
                 'message' => Lang::get('relations.followed', ['name' => $user->name]),
-                'following' => $this->user->followers->all(),
-                'followed_count' => $user->following->count()
+                'followed_profile' => $user->profile
             ]);
         } catch (Exception $e) {
             return response()->json([

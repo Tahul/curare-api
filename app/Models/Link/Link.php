@@ -2,7 +2,6 @@
 
 namespace App\Models\Link;
 
-use App\Casts\Date;
 use App\Casts\Json;
 use App\Models\User\User;
 use Illuminate\Database\Eloquent\Collection;
