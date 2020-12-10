@@ -33,9 +33,10 @@ class RelationController extends Controller
      * @param User $user
      * @return JsonResponse
      */
-    public function follow(User $user) {
+    public function follow(User $user)
+    {
         try {
-            $this->user->following()->attach($user->id);
+            $this->user->followings()->attach($user->id);
 
             return response()->json([
                 'message' => Lang::get('relations.followed', ['name' => $user->name]),
@@ -54,9 +55,10 @@ class RelationController extends Controller
      * @param User $user
      * @return JsonResponse
      */
-    public function unfollow(User $user) {
+    public function unfollow(User $user)
+    {
         try {
-            $this->user->following()->detach($user->id);
+            $this->user->followings()->detach($user->id);
 
             return response()->json([
                 'message' => Lang::get('relations.unfollowed', ['name' => $user->name]),
@@ -75,11 +77,14 @@ class RelationController extends Controller
      * @param User|null $user
      * @return JsonResponse
      */
-    public function following(User $user = null) {
+    public function following(User $user = null)
+    {
         try {
             $user = !is_null($user) ? $user : $this->user;
 
-            return response()->json($user->following->all());
+            return response()->json($user->followings->map(function (User $user) {
+                return $user->profile;
+            }));
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get('relations.error')
@@ -94,11 +99,14 @@ class RelationController extends Controller
      * @param User|null $user
      * @return JsonResponse
      */
-    public function followers(User $user = null) {
+    public function followers(User $user = null)
+    {
         try {
             $user = !is_null($user) ? $user : $this->user;
 
-            return response()->json($user->followers->all());
+            return response()->json($user->followers->map(function (User $user) {
+                return $user->profile;
+            }));
         } catch (Exception $e) {
             return response()->json([
                 'message' => Lang::get('relations.error')
