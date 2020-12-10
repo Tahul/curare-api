@@ -59,7 +59,7 @@ class RelationController extends Controller
             $this->user->following()->detach($user->id);
 
             return response()->json([
-                'message' => Lang::get('relations.followed', ['name' => $user->name]),
+                'message' => Lang::get('relations.unfollowed', ['name' => $user->name]),
                 'followed_profile' => $user->profile
             ]);
         } catch (Exception $e) {
