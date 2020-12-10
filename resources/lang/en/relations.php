@@ -12,8 +12,8 @@ return [
     |
     */
 
-    'followed' => 'You are now following @:name.',
-    'unfollowed' => 'You are no longer following @:name.',
+    'followed' => 'You follow @:name.',
+    'unfollowed' => 'You no longer follow @:name.',
     'error' => 'An error occured while updating your relations.',
     'not_found' => 'Cannot find this user.',
 ];
