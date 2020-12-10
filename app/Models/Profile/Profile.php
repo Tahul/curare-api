@@ -95,7 +95,7 @@ class Profile extends Model implements HasMedia
      */
     public function getFollowingAttribute()
     {
-        return $this->user->following->count();
+        return $this->user->followings->count();
     }
 
     /**
@@ -103,11 +103,12 @@ class Profile extends Model implements HasMedia
      *
      * @return bool
      */
-    public function getIsFollowedAttribute() {
+    public function getIsFollowedAttribute()
+    {
         $user = auth()->user();
 
-        if (! is_null($user)) {
-            return $user->following->contains($this->id);
+        if (!is_null($user)) {
+            return $user->followings->contains($this->id);
         }
 
         return false;
