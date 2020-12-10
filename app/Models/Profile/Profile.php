@@ -30,14 +30,16 @@ class Profile extends Model implements HasMedia
         'id',
         'created_at',
         'updated_at',
-        'media'
+        'media',
+        'user'
     ];
 
     protected $appends = [
         'name',
         'avatar_url',
         'followers',
-        'following'
+        'following',
+        'is_followed'
     ];
 
     /**
@@ -89,10 +91,25 @@ class Profile extends Model implements HasMedia
     /**
      * Return the `following` attribute
      *
-     * return @string
+     * @return string
      */
     public function getFollowingAttribute()
     {
         return $this->user->following->count();
+    }
+
+    /**
+     * Return the `is_following` attribute
+     *
+     * @return bool
+     */
+    public function getIsFollowedAttribute() {
+        $user = auth()->user();
+
+        if (! is_null($user)) {
+            return $user->following->contains($this->id);
+        }
+
+        return false;
     }
 }
