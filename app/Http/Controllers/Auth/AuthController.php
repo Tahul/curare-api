@@ -27,7 +27,6 @@ class AuthController extends Controller
 
         try {
             if (Auth::attempt($credentials)) {
-                /** @var User $user */
                 $user = Auth::user();
 
                 return response()->json($user->toArray());
@@ -54,7 +53,6 @@ class AuthController extends Controller
         $credentials = request(['name', 'email', 'password']);
 
         try {
-            /** @var User $user */
             $user = User::create([
                 'name' => $credentials['name'],
                 'email' => $credentials['email'],
