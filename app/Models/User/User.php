@@ -61,7 +61,8 @@ class User extends Authenticatable
      *
      * @return BelongsToMany
      */
-    public function followers() {
+    public function followers()
+    {
         return $this->belongsToMany(User::class, 'relations', 'follower_id', 'following_id');
     }
 
@@ -70,7 +71,8 @@ class User extends Authenticatable
      *
      * @return BelongsToMany
      */
-    public function followings() {
+    public function followings()
+    {
         return $this->belongsToMany(User::class, 'relations', 'following_id', 'follower_id');
     }
 }
