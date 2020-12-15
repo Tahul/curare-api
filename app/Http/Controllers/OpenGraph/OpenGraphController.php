@@ -15,7 +15,7 @@ class OpenGraphController extends Controller
      * @param LinkPreviewRequest $request
      * @return JsonResponse
      */
-    public function preview(LinkPreviewRequest $request)
+    public function preview(LinkPreviewRequest $request): JsonResponse
     {
         return response()->json(
             Parser::parse($request->url)

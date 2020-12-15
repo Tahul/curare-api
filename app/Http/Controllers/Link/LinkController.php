@@ -38,7 +38,7 @@ class LinkController extends Controller
      *
      * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
         // Default the source to the current logged in user
         $source = $this->user;
@@ -63,7 +63,7 @@ class LinkController extends Controller
      * @param Link $model
      * @return JsonResponse
      */
-    public function click(Link $model) {
+    public function click(Link $model): JsonResponse {
         try {
             $model->clicks = $model->clicks + 1;
 

@@ -30,7 +30,7 @@ class ProfileController extends Controller
      * @param int|null $id
      * @return JsonResponse
      */
-    public function show(Request $request, $id = null)
+    public function show(Request $request, $id = null): JsonResponse
     {
         try {
             $profile = null;
@@ -56,7 +56,7 @@ class ProfileController extends Controller
      * @param ProfileUpdateRequest $request
      * @return JsonResponse
      */
-    public function update(ProfileUpdateRequest $request)
+    public function update(ProfileUpdateRequest $request): JsonResponse
     {
         try {
             $profile = $this->getCurrentUserProfile($request);
@@ -86,7 +86,7 @@ class ProfileController extends Controller
      * @param ProfileAvatarUpdateRequest $request
      * @return JsonResponse
      */
-    public function updateAvatar(ProfileAvatarUpdateRequest $request)
+    public function updateAvatar(ProfileAvatarUpdateRequest $request): JsonResponse
     {
         try {
             $profile = $this->getCurrentUserProfile($request);
@@ -119,7 +119,7 @@ class ProfileController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function deleteAvatar(Request $request)
+    public function deleteAvatar(Request $request): JsonResponse
     {
         try {
             $profile = $this->getCurrentUserProfile($request);

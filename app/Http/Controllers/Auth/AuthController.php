@@ -21,7 +21,7 @@ class AuthController extends Controller
      * @param LoginRequest $request
      * @return JsonResponse
      */
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request): JsonResponse
     {
         $credentials = request(['email', 'password']);
 
@@ -48,7 +48,7 @@ class AuthController extends Controller
      * @param RegisterRequest $request
      * @return JsonResponse
      */
-    public function register(RegisterRequest $request)
+    public function register(RegisterRequest $request): JsonResponse
     {
         $credentials = request(['name', 'email', 'password']);
 
@@ -86,7 +86,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function logout(Request $request)
+    public function logout(Request $request): JsonResponse
     {
         try {
             Auth::guard('web')->logout();

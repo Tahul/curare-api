@@ -42,7 +42,7 @@ class CollectionController extends Controller
      * @param Collection $model
      * @return JsonResponse
      */
-    public function updateImage(CollectionImageUpdateRequest $request, Collection $model)
+    public function updateImage(CollectionImageUpdateRequest $request, Collection $model): JsonResponse
     {
         try {
             // Delete current avatar
@@ -74,7 +74,7 @@ class CollectionController extends Controller
      * @param Collection $model
      * @return JsonResponse
      */
-    public function deleteImage(Request $request, Collection $model)
+    public function deleteImage(Request $request, Collection $model): JsonResponse
     {
         try {
             // Delete current avatar
