@@ -45,7 +45,7 @@ class Collection extends Model implements HasMedia
      *
      * @return BelongsTo
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
@@ -55,7 +55,7 @@ class Collection extends Model implements HasMedia
      *
      * @return HasMany
      */
-    public function links()
+    public function links(): HasMany
     {
         return $this->hasMany(Link::class);
     }
@@ -80,7 +80,7 @@ class Collection extends Model implements HasMedia
      *
      * @return int
      */
-    public function getLinksCountAttribute()
+    public function getLinksCountAttribute(): int
     {
         return $this->links->count();
     }
@@ -90,7 +90,7 @@ class Collection extends Model implements HasMedia
      *
      * @return string|null
      */
-    public function getImageUrlAttribute()
+    public function getImageUrlAttribute(): ?string
     {
         $media = $this->getFirstMedia($this->IMAGE_COLLECTION_NAME);
 

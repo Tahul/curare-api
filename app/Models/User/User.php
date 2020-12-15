@@ -3,6 +3,7 @@
 namespace App\Models\User;
 
 use App\Models\Collection\Collection;
+use App\Models\Link\Link;
 use App\Models\Profile\Profile;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -22,7 +23,6 @@ class User extends Authenticatable
     ];
 
     protected $hidden = [
-        'id',
         'password',
         'remember_token',
         'created_at',
@@ -40,7 +40,7 @@ class User extends Authenticatable
      *
      * @return HasOne
      */
-    public function profile()
+    public function profile(): HasOne
     {
         return $this->hasOne(Profile::class);
     }
@@ -50,7 +50,7 @@ class User extends Authenticatable
      *
      * @return HasMany
      */
-    public function collections()
+    public function collections(): HasMany
     {
         return $this->hasMany(Collection::class);
     }
@@ -61,7 +61,7 @@ class User extends Authenticatable
      *
      * @return BelongsToMany
      */
-    public function followers()
+    public function followers(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'relations', 'follower_id', 'following_id');
     }
@@ -71,8 +71,18 @@ class User extends Authenticatable
      *
      * @return BelongsToMany
      */
-    public function followings()
+    public function followings(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'relations', 'following_id', 'follower_id');
+    }
+
+    /**
+     * Links relation.
+     *
+     * @return HasMany
+     */
+    public function links(): HasMany
+    {
+        return $this->hasMany(Link::class);
     }
 }

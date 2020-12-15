@@ -16,7 +16,8 @@ class Relation extends Model
      *
      * @return BelongsTo
      */
-    public function follower() {
+    public function follower(): BelongsTo
+    {
         return $this->belongsTo(User::class, 'id', 'follower_id');
     }
 
@@ -25,7 +26,8 @@ class Relation extends Model
      *
      * @return BelongsTo
      */
-    public function following() {
+    public function following(): BelongsTo
+    {
         return $this->belongsTo(User::class, 'id', 'following_id');
     }
 }

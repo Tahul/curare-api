@@ -38,7 +38,7 @@ class Link extends Model
      *
      * @return BelongsTo
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
@@ -48,7 +48,7 @@ class Link extends Model
      *
      * @return BelongsTo
      */
-    public function collection()
+    public function collection(): BelongsTo
     {
         return $this->belongsTo(Collection::class);
     }

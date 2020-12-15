@@ -57,7 +57,7 @@ class Profile extends Model implements HasMedia
      *
      * @return string|null
      */
-    public function getAvatarUrlAttribute()
+    public function getAvatarUrlAttribute(): ?string
     {
         $media = $this->getFirstMedia($this->AVATAR_COLLECTION_NAME);
 
@@ -73,7 +73,7 @@ class Profile extends Model implements HasMedia
      *
      * @return string
      */
-    public function getNameAttribute()
+    public function getNameAttribute(): string
     {
         return $this->user->name;
     }
@@ -83,7 +83,7 @@ class Profile extends Model implements HasMedia
      *
      * @return string
      */
-    public function getFollowersAttribute()
+    public function getFollowersAttribute(): string
     {
         return $this->user->followers->count();
     }
@@ -93,7 +93,7 @@ class Profile extends Model implements HasMedia
      *
      * @return string
      */
-    public function getFollowingAttribute()
+    public function getFollowingAttribute(): string
     {
         return $this->user->followings->count();
     }
@@ -103,7 +103,7 @@ class Profile extends Model implements HasMedia
      *
      * @return bool
      */
-    public function getIsFollowedAttribute()
+    public function getIsFollowedAttribute(): bool
     {
         $user = auth()->user();
 
