@@ -3,11 +3,13 @@
 namespace App\Models\Link;
 
 use App\Casts\Json;
+use App\Models\Profile\Profile;
 use App\Models\User\User;
-use Illuminate\Database\Eloquent\Collection;
+use App\Models\Collection\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Link extends Model
 {
