@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.4",
+        "php": "^8.0",
         "ext-dom": "*",
         "ext-json": "*",
         "fideloper/proxy": "^4.2",
@@ -17,8 +17,9 @@
         "laravel/framework": "^8.0",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
-        "spatie/laravel-medialibrary": "^8.0.0",
-        "spatie/once": "^2.2"
+        "spatie/laravel-medialibrary": "^9.4.0",
+        "spatie/once": "^2.2",
+        "staudenmeir/belongs-to-through": "^2.11"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
