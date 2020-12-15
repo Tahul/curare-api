@@ -33,7 +33,7 @@ class RelationController extends Controller
      * @param User $user
      * @return JsonResponse
      */
-    public function follow(User $user)
+    public function follow(User $user): JsonResponse
     {
         try {
             $this->user->followings()->attach($user->id);
@@ -55,7 +55,7 @@ class RelationController extends Controller
      * @param User $user
      * @return JsonResponse
      */
-    public function unfollow(User $user)
+    public function unfollow(User $user): JsonResponse
     {
         try {
             $this->user->followings()->detach($user->id);
@@ -77,7 +77,7 @@ class RelationController extends Controller
      * @param User|null $user
      * @return JsonResponse
      */
-    public function following(User $user = null)
+    public function followings(User $user = null): JsonResponse
     {
         try {
             $user = !is_null($user) ? $user : $this->user;
@@ -99,7 +99,7 @@ class RelationController extends Controller
      * @param User|null $user
      * @return JsonResponse
      */
-    public function followers(User $user = null)
+    public function followers(User $user = null): JsonResponse
     {
         try {
             $user = !is_null($user) ? $user : $this->user;

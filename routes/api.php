@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Collection\CollectionController;
+use App\Http\Controllers\Feed\FeedController;
 use App\Http\Controllers\Link\LinkController;
 use App\Http\Controllers\Profile\ProfileController;
 use App\Http\Controllers\OpenGraph\OpenGraphController;
@@ -79,8 +80,15 @@ Route::middleware('auth:sanctum')->prefix('links')->group(function () {
 Route::middleware('auth:sanctum')->prefix('social')->group(function () {
     Route::post('following/{user}', [RelationController::class, 'follow']);
     Route::delete('following/{user}', [RelationController::class, 'unfollow']);
-    Route::get('following/{user?}', [RelationController::class, 'following']);
+    Route::get('following/{user?}', [RelationController::class, 'followings']);
     Route::get('followers/{user?}', [RelationController::class, 'followers']);
+});
+
+/**
+ * Feed routes
+ */
+Route::middleware('auth:sanctum')->prefix('feed')->group(function () {
+    Route::get('/', [FeedController::class, 'feed']);
 });
 
 /**
