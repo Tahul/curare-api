@@ -27,8 +27,7 @@ class Link extends Model
     ];
 
     protected $casts = [
-        'ogp' => Json::class,
-        'created_at' => 'datetime:y-m-d @ H:i:s'
+        'ogp' => Json::class
     ];
 
     protected $hidden = [
@@ -43,6 +42,16 @@ class Link extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Profile relation.
+     *
+     * @return HasOneThrough
+     */
+    public function profile(): HasOneThrough
+    {
+        return $this->hasOneThrough(Profile::class, User::class, 'id', 'user_id', 'user_id', 'id');
     }
 
     /**
