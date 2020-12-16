@@ -44,7 +44,7 @@ class LinkFactory extends Factory
             'user_id' => User::factory(),
             'collection_id' => Collection::factory(),
             'url' => $url,
-            'ogp' => $ogp($url)
+            'ogp' => $ogp
         ];
     }
 }
