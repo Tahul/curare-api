@@ -36,7 +36,7 @@ class ExploreController extends Controller
         try {
             $followings = $this->user->followings->pluck('id');
 
-            $query = Profile::whereNotIn('user_id', $followings)->latest('created_at')->paginate();
+            $query = Profile::whereNotIn('user_id', [...$followings, $this->user->id])->latest('created_at')->paginate();
 
             return response()->json($query);
         } catch (Exception $e) {
