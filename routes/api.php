@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Collection\CollectionController;
+use App\Http\Controllers\Explore\ExploreController;
 use App\Http\Controllers\Feed\FeedController;
 use App\Http\Controllers\Link\LinkController;
 use App\Http\Controllers\Profile\ProfileController;
@@ -89,6 +90,13 @@ Route::middleware('auth:sanctum')->prefix('social')->group(function () {
  */
 Route::middleware('auth:sanctum')->prefix('feed')->group(function () {
     Route::get('/', [FeedController::class, 'feed']);
+});
+
+/**
+ * Explore routes
+ */
+Route::middleware('auth:sanctum')->prefix('explore')->group(function () {
+    Route::get('/', [ExploreController::class, 'explore']);
 });
 
 /**
