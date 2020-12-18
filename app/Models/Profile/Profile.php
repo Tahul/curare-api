@@ -40,8 +40,8 @@ class Profile extends Model implements HasMedia
     protected $appends = [
         'name',
         'avatar_url',
-        'followers',
-        'following',
+        'followers_count',
+        'followings_count',
         'is_followed',
         'links_count'
     ];
@@ -97,7 +97,7 @@ class Profile extends Model implements HasMedia
      *
      * @return string
      */
-    public function getFollowersAttribute(): string
+    public function getFollowersCountAttribute(): string
     {
         return $this->user->followers->count();
     }
@@ -107,7 +107,7 @@ class Profile extends Model implements HasMedia
      *
      * @return string
      */
-    public function getFollowingAttribute(): string
+    public function getFollowingsCountAttribute(): string
     {
         return $this->user->followings->count();
     }
