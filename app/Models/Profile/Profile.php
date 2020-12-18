@@ -39,7 +39,8 @@ class Profile extends Model implements HasMedia
         'avatar_url',
         'followers',
         'following',
-        'is_followed'
+        'is_followed',
+        'links_count'
     ];
 
     /**
@@ -112,5 +113,15 @@ class Profile extends Model implements HasMedia
         }
 
         return false;
+    }
+
+    /**
+     * Get the links count attribute.
+     *
+     * @return int
+     */
+    public function getLinksCountAttribute(): int
+    {
+        return $this->user->links->count();
     }
 }
