@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
         $users = User::all();
 
         $users->each(
-            function(User $user) use ($users) {
+            function (User $user) use ($users) {
                 $user->followings()->attach(
                     $users->whereNotIn('id', [$user->id])->random(5)->pluck('id')
                 );
