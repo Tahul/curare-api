@@ -5,10 +5,12 @@
 
 namespace App\Models\Profile;
 
+use App\Models\Relation\Relation;
 use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -31,7 +33,8 @@ class Profile extends Model implements HasMedia
         'created_at',
         'updated_at',
         'media',
-        'user'
+        'user',
+        'followers'
     ];
 
     protected $appends = [
@@ -48,9 +51,19 @@ class Profile extends Model implements HasMedia
      *
      * @return BelongsTo
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Followers relation.
+     *
+     * @return HasManyThrough
+     */
+    public function followers(): HasManyThrough
+    {
+        return $this->hasManyThrough(Relation::class, User::class, 'id', 'following_id', 'user_id', 'id');
     }
 
     /**
