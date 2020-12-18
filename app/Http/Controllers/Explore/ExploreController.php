@@ -34,9 +34,21 @@ class ExploreController extends Controller
     public function explore(): JsonResponse
     {
         try {
+            $type = ! is_null(request('type')) ? request('type') : 'newcomers';
+
             $followings = $this->user->followings->pluck('id');
 
-            $query = Profile::whereNotIn('user_id', [...$followings, $this->user->id])->latest('created_at')->paginate();
+            $query = Profile::whereNotIn('user_id', [...$followings, $this->user->id]);
+
+            if ($type === 'newcomers') {
+                $query = $query->latest();
+            }
+
+            if ($type === 'mostfollowed') {
+                $query = $query->withCount('followers')->orderBy('followers_count', 'desc');
+            }
+
+            $query = $query->paginate();
 
             return response()->json($query);
         } catch (Exception $e) {
