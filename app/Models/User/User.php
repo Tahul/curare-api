@@ -11,10 +11,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Laravel\Sanctum\NewAccessToken;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
         'name',
@@ -84,5 +86,36 @@ class User extends Authenticatable
     public function links(): HasMany
     {
         return $this->hasMany(Link::class);
+    }
+
+    /**
+     *  Regenerate the user token.
+     *
+     * @return NewAccessToken
+     */
+    public function regenerateToken(): NewAccessToken
+    {
+        $token = $this->tokens()->where('name', '=', 'access_token')->first();
+
+        if (!is_null($token)) {
+            try {
+                $token->delete();
+            } catch (\Exception $e) {
+                info('Failed to remove ' . $this->name . ' existing access_token.');
+            }
+        }
+
+        return $this->createToken('access_token');
+    }
+
+
+    /**
+     * Return the user access token token.
+     *
+     * @return string
+     */
+    public function getTokenAttribute(): string
+    {
+        return $this->regenerateToken()->plainTextToken;
     }
 }
