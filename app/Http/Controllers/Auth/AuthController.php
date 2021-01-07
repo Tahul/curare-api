@@ -27,9 +27,15 @@ class AuthController extends Controller
 
         try {
             if (Auth::attempt($credentials)) {
-                $user = Auth::user();
+                $user = User::find(Auth::user()->id);
 
-                return response()->json($user->toArray());
+                if (!is_null($request->withToken)) {
+                    $user = $user->append('token');
+                }
+
+                return response()->json(
+                    $user
+                );
             }
 
             return response()->json([
