@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\Collection\CollectionController;
 use App\Http\Controllers\Explore\ExploreController;
 use App\Http\Controllers\Feed\FeedController;
@@ -29,6 +30,12 @@ Route::prefix('auth')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
 
+
+    // Socialite auth routes
+    Route::get('/social/redirect', [SocialiteController::class, 'getSocialRedirect']);
+    Route::get('/social/callback', [SocialiteController::class, 'getSocialCallback']);
+
+    // Logged-in auth routes
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
@@ -79,10 +86,10 @@ Route::middleware('auth:sanctum')->prefix('links')->group(function () {
  * Social routes
  */
 Route::middleware('auth:sanctum')->prefix('social')->group(function () {
-    Route::post('following/{user}', [RelationController::class, 'follow']);
-    Route::delete('following/{user}', [RelationController::class, 'unfollow']);
-    Route::get('following/{user?}', [RelationController::class, 'followings']);
-    Route::get('followers/{user?}', [RelationController::class, 'followers']);
+    Route::post('/following/{user}', [RelationController::class, 'follow']);
+    Route::delete('/following/{user}', [RelationController::class, 'unfollow']);
+    Route::get('/following/{user?}', [RelationController::class, 'followings']);
+    Route::get('/followers/{user?}', [RelationController::class, 'followers']);
 });
 
 /**
