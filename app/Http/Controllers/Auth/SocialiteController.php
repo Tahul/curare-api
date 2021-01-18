@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
-use InvalidArgumentException;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
@@ -17,15 +16,15 @@ class SocialiteController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function getSocialRedirect(Request $request)
+    public function getSocialRedirect(Request $request): JsonResponse
     {
-        if ($request->get('redirect_url') !== null) {
+        if ($request->has('redirect_url') && $request->has('type')) {
             return response()->json([
-                "redirect_url" => Socialite::driver('twitter')->redirectUrl($request->get('redirect_url'))->stateless()->redirect()->getTargetUrl()
+                "redirect_url" => Socialite::driver($request->type)->redirect()->getTargetUrl()
             ]);
         } else {
             return response()->json([
-                'message' => Lang::get('auth.failed')
+                'message' => Lang::get('auth.social.failed')
             ], 401);
         }
     }
@@ -36,39 +35,13 @@ class SocialiteController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function getSocialCallback(Request $request)
+    public function getSocialCallback(Request $request): JsonResponse
     {
         // Retrieve user from socialite callback
-        $user = Socialite::with('twitter')
-            ->redirectUrl($request->get('redirect_url'))
+        $user = Socialite::with($request->type)
             ->stateless()
             ->user();
 
         info($user);
-
-        /*
-        // Try to find existing user
-        $dbUser = User::where('email', '=', $user->email)->first();
-        $token = null;
-
-        // No existing user, create one from Google data
-        if (!is_null($user->email) && is_null($dbUser)) {
-            $newUser = new User;
-            $newUser->email = $user->email;
-
-            if (array_key_exists('family_name', $user->user)) {
-                $newUser->lastname = $user->user['family_name'];
-            }
-
-            if (array_key_exists('given_name', $user->user) && !is_null($user->user['given_name'])) {
-                $newUser->firstname = $user->user['given_name'];
-            }
-
-            $newUser->google_id = $user->id;
-            $newUser->save();
-
-            $dbUser = $newUser;
-        }
-        */
     }
 }
