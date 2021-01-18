@@ -17,5 +17,8 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'error' => 'We could not authenticate your account.',
     'logout' => 'You logged out from Curare.',
-    'welcome' => 'Welcome to Curare.'
+    'welcome' => 'Welcome to Curare.',
+    'social' => [
+        'failed' => 'We could not reach this social auth provider. Try again later.'
+    ]
 ];
