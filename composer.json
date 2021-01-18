@@ -18,7 +18,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.0",
-        "socialiteproviders/twitter": "^4.1",
+        "league/oauth1-client": "dev-master",
         "spatie/laravel-medialibrary": "^9.4.0",
         "spatie/laravel-ray": "^1.0",
         "spatie/once": "^2.2",
