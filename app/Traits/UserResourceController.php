@@ -101,6 +101,7 @@ trait UserResourceController
                 )
             );
         } catch (Exception $e) {
+            info($e);
             return response()->json([
                 'message' => Lang::get($this->model->NAME . '.error')
             ], 422);
